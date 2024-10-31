@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Simple Flask App</title>
+</head>
+<body>
+    <h1>Simple Flask App</h1>
+    <p id="message"></p>
+    <script>
+        fetch('/api/data')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('message').textContent = data.message;
+            })
+    </script>
+</body>
+</html>
